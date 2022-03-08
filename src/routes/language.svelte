@@ -31,7 +31,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
 </script>
 
 <svelte:head>
-  <title>{language} | senpy-club</title>
+  <title>{language} | The Senpy Club</title>
 </svelte:head>
 
 <div class="content">
