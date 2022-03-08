@@ -1,0 +1,73 @@
+/*
+ * This file is part of frontend-next <https://github.com/senpy-club/frontend-next>.
+ * Copyright (C) 2022-2022 Fuwn <contact@fuwn.me>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Copyright (C) 2022-2022 Fuwn <contact@fuwn.me>
+ * SPDX-License-Identifier: GPL-3.0-only
+ */
+
+@import "normalize.css/normalize.css";
+@import "sakura.css/css/sakura-dark.css";
+
+html {
+  scroll-behavior: smooth;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+body {
+  max-width: 58em;
+}
+
+img {
+  border-radius: 5px;
+}
+
+#random-image img {
+  height: 20em;
+  transition: 0.25s;
+}
+#random-image img:hover {
+  height: 22.5em;
+  opacity: 0.75;
+}
+#random-image a:hover {
+  border-bottom: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.image-rack {
+  text-align: center;
+  list-style-type: none;
+}
+
+#image-rack-item {
+  display: inline;
+  padding: 10px;
+}
+#image-rack-item a:hover {
+  border-bottom: none;
+}
+#image-rack-item img {
+  width: 20%;
+  transition: 0.25s;
+}
+#image-rack-item img:hover {
+  opacity: 0.75;
+  width: 25%;
+}
