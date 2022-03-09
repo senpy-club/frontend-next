@@ -16,7 +16,7 @@
 // Copyright (C) 2022-2022 Fuwn <contact@fuwn.me>
 // SPDX-License-Identifier: GPL-3.0-only
 
-const baseUrl = "https://senpy-club-api-worker.fuwn.workers.dev/v2";
+const baseUrl = "https://api.senpy.club/v2";
 
 interface RandomImage {
   language: string;
