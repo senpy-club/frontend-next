@@ -20,11 +20,13 @@ SPDX-License-Identifier: GPL-3.0-only -->
   import rst2html from "rst2html";
   import { baseURL } from "$lib/api";
 
-  let rst;
+  let rst, rstTime;
   let complete = false;
 
   onMount(async () => {
+    rstTime = performance.now();
     rst = await (await fetch(baseURL)).text();
+    rstTime = performance.now() - rstTime;
     complete = true;
   });
 </script>
@@ -47,5 +49,6 @@ SPDX-License-Identifier: GPL-3.0-only -->
     <p>Fetching API README...</p>
   {:else}
     {@html rst2html(rst)}
+    <p>RST to HTML time: {rstTime}ms</p>
   {/if}
 </section>
