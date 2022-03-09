@@ -21,13 +21,11 @@ SPDX-License-Identifier: GPL-3.0-only -->
   import { page } from "$app/stores";
 
   let language = $page.url.searchParams.get("language");
-  let images, fetchTime;
+  let images;
   let complete = false;
 
   onMount(async () => {
-    fetchTime = performance.now();
     images = await fetchImages(language);
-    fetchTime = performance.now() - fetchTime;
     complete = true;
   });
 </script>
@@ -56,6 +54,5 @@ SPDX-License-Identifier: GPL-3.0-only -->
         </li>
       {/each}
     </ul>
-    <small>Fetch time: {fetchTime}ms</small>
   {/if}
 </div>
