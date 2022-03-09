@@ -2387,7 +2387,7 @@ rollup@^2.59.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-rst2html@^1.0.4:
+rst2html@1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/rst2html/-/rst2html-1.0.4.tgz#a3c6b365514d135cf01e1d82dcfba58b10d53d94"
   integrity sha1-o8azZVFNE1zwHh2C3PulixDVPZQ=
