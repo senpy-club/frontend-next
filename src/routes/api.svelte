@@ -18,12 +18,13 @@ SPDX-License-Identifier: GPL-3.0-only -->
 <script>
   import { onMount } from "svelte";
   import rst2html from "rst2html";
+  import { baseURL } from "$lib/api";
 
   let rst;
   let complete = false;
 
   onMount(async () => {
-    rst = await (await fetch("https://api.senpy.club")).text();
+    rst = await (await fetch(baseURL)).text();
     complete = true;
   });
 </script>
