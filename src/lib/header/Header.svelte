@@ -23,7 +23,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
     <a sveltekit:prefetch href="/languages">languages</a>,
     <a
       sveltekit:prefetch
-      href="https://senpy-club-api-worker.fuwn.workers.dev/"
+      href="https://api.senpy.club/"
       target="_blank"
     >
       api
