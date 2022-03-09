@@ -15,13 +15,36 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 Copyright (C) 2022-2022 Fuwn <contact@fuwn.me>
 SPDX-License-Identifier: GPL-3.0-only -->
+<script>
+  import { onMount } from "svelte";
+  import rst2html from "rst2html";
 
-<header>
-  <nav>
-    Route senpy[3] = [
-    <a sveltekit:prefetch href="/">home</a>,
-    <a sveltekit:prefetch href="/languages">languages</a>,
-    <a sveltekit:prefetch href="/api">api</a>
-    ];
-  </nav>
-</header>
+  let rst;
+  let complete = false;
+
+  onMount(async () => {
+    rst = await (await fetch("https://api.senpy.club")).text();
+    complete = true;
+  });
+</script>
+
+<svelte:head>
+  <title>API | The Senpy Club</title>
+</svelte:head>
+
+<section>
+  <h1>API</h1>
+
+  <p>This documentation is auto-generated, there may be errors.</p>
+
+  <p>
+    The Senpy Club API can be accessed at
+    <a href="https://api.senpy.club" target="_blank">https://api.senpy.club</a>.
+  </p>
+
+  {#if !complete}
+    <p>Fetching API README...</p>
+  {:else}
+    {@html rst2html(rst)}
+  {/if}
+</section>
