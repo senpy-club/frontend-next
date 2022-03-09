@@ -19,11 +19,13 @@ SPDX-License-Identifier: GPL-3.0-only -->
   import { onMount } from "svelte";
   import { fetchRandomImage } from "$lib/api";
 
-  let image;
+  let image, fetchTime;
   let complete = false;
 
   onMount(async () => {
+    fetchTime = performance.now();
     image = (await fetchRandomImage()).image;
+    fetchTime = performance.now() - fetchTime;
     complete = true;
   });
 </script>
@@ -46,6 +48,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
         />
       </a>
     </div>
+    <p>Fetch time: {fetchTime}ms</p>
   {/if}
 
   <h2>Contributing</h2>
