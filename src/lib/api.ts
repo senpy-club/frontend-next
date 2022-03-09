@@ -16,7 +16,8 @@
 // Copyright (C) 2022-2022 Fuwn <contact@fuwn.me>
 // SPDX-License-Identifier: GPL-3.0-only
 
-const baseUrl = "https://api.senpy.club/v2";
+export const baseURL = "https://api.senpy.club";
+export const baseAPI = `${baseURL}/v2`;
 
 interface RandomImage {
   language: string;
@@ -26,19 +27,19 @@ interface RandomImage {
 export async function fetchImages(language: string): Promise<string[]> {
   language = language.replace("#", "%23");
 
-  const response = await fetch(`${baseUrl}/language/${language}`);
+  const response = await fetch(`${baseAPI}/language/${language}`);
 
   return await response.json();
 }
 
 export async function fetchLanguages(): Promise<string[]> {
-  const response = await fetch(`${baseUrl}/languages`);
+  const response = await fetch(`${baseAPI}/languages`);
 
   return await response.json();
 }
 
 export async function fetchRandomImage(): Promise<RandomImage> {
-  const response = await fetch(`${baseUrl}/random`);
+  const response = await fetch(`${baseAPI}/random`);
 
   return await response.json();
 }
