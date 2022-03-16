@@ -49,6 +49,6 @@ SPDX-License-Identifier: GPL-3.0-only -->
     <p>Fetching API README...</p>
   {:else}
     {@html rst2html(rst)}
-    <p>RST to HTML time: {rstTime}ms</p>
+    <p>Double rst_to_html_time = {rstTime}; /* ms */</p>
   {/if}
 </section>
