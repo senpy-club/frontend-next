@@ -24,7 +24,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
 
   onMount(async () => {
     fetchTime = performance.now();
-    image = (await fetchRandomImage()).image;
+    image = (await fetchRandomImage());
     fetchTime = performance.now() - fetchTime;
     complete = true;
   });
@@ -40,15 +40,16 @@ SPDX-License-Identifier: GPL-3.0-only -->
   {#if !complete}
     <p>Fetching a random image...</p>
   {:else}
-    <div id="random-image">
-      <a href={image}>
+    <div class="highlight-image">
+      <a href={`/language?language=${image.language}&image=${image.image}`}>
         <img
-          src={image}
+          src={image.image}
           alt="Image of an anime girl holding a programming book"
         />
       </a>
     </div>
-    <p>Fetch time: {fetchTime}ms</p>
+
+    <p>Double fetch_time = {fetchTime}; /* ms */</p>
   {/if}
 
   <h2>Contributing</h2>
