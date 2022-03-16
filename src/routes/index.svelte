@@ -24,7 +24,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
 
   onMount(async () => {
     fetchTime = performance.now();
-    image = (await fetchRandomImage());
+    image = await fetchRandomImage();
     fetchTime = performance.now() - fetchTime;
     complete = true;
   });
