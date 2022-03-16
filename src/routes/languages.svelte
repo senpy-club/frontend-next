@@ -55,6 +55,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
         </li>
       {/each}
     </ul>
-    <p>Fetch time: {fetchTime}ms</p>
+
+    <p>Double fetch_time = {fetchTime}; /* ms */</p>
   {/if}
 </div>

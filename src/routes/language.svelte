@@ -20,15 +20,53 @@ SPDX-License-Identifier: GPL-3.0-only -->
   import { fetchImages } from "$lib/api";
   import { page } from "$app/stores";
 
+  const errorImages = [
+    "https://www.pngarts.com/files/8/Confused-Anime-Transparent-Image.png",
+    "https://cdn130.picsart.com/246838980018212.png?r1024x1024",
+    "https://toppng.com/public/uploads/thumbnail/confused-anime-png-anime-question-png-gif-11563638774nccphyut3x.png",
+    "https://linuxreviews.org/images/8/8d/Blond-anime-girl-with-red-questionmark.png",
+    "https://external-preview.redd.it/VNfYgsb6Pqn4xlEBpYl11534fIpOfN1XeMe7NrzgmQs.png?width=282&auto=webp&s=3247341e1cb8a6d6f63b7b3d63809e52ca0558fd",
+    "https://i.ya-webdesign.com/images/confused-anime-png-5.png",
+    "https://www.pngarts.com/files/8/Confused-Anime-PNG-Picture.png",
+    "https://64.media.tumblr.com/20fb900f57db568393387211c9c4760c/tumblr_olanyyuuQZ1tbejoso2_400.png",
+    "https://stickershop.line-scdn.net/stickershop/v1/product/7982958/LINEStorePC/main.png;compress=true",
+    "https://emoji.gg/assets/emoji/8573_Shikiconfused.png",
+    "https://i.imgur.com/TOgxESH.jpg",
+  ];
+
   let language = $page.url.searchParams.get("language");
-  let images, fetchTime;
+  let images, fetchTime, image, imageSize;
   let complete = false;
+  let imageQuery = $page.url.searchParams.get("image");
 
   onMount(async () => {
     fetchTime = performance.now();
     images = await fetchImages(language);
     fetchTime = performance.now() - fetchTime;
     complete = true;
+
+    if (imageQuery) {
+      image = images.filter(i => i.includes(imageQuery));
+
+      if (!image[0]) {
+        image = "https://www.pngarts.com/files/8/Confused-Anime-Transparent-Image.png";
+        image = errorImages[Math.floor(Math.random() * errorImages.length)];
+      } else {
+        let xhr = new XMLHttpRequest();
+
+        xhr.open("HEAD", image, true);
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              imageSize = `${xhr.getResponseHeader("Content-Length") / 1024}`;
+            } else {
+              imageSize = "Error";
+            }
+          }
+        }
+        xhr.send(null);
+      }
+    }
   });
 </script>
 
@@ -43,11 +81,49 @@ SPDX-License-Identifier: GPL-3.0-only -->
     <p>Fetching images...</p>
   {:else if images.length === 0}
     <p>Sorry, no images were found for this language.</p>
+  {:else if image}
+    {#if errorImages.includes(image)}
+      <div class="highlight-image">
+        <p>
+          <i>Could not locate that specific image!</i>
+          Wanna go <a href={`/language?language=${language}`}>back</a> to language homepage?
+        </p>
+
+        <a href={image}>
+          <img
+            src={image}
+            alt="Image of a confused anime girl"
+          />
+        </a>
+      </div>
+    {:else if image}
+      <div class="highlight-image">
+        <p>
+          Wanna go <a href={`/language?language=${language}`}>back</a> to language homepage?
+        </p>
+
+        <a href={image}>
+          <img
+            src={image}
+            alt="Image of an anime girl holding a programming book"
+          />
+        </a>
+
+        <p>
+          Attributes attributes =
+          &lbrace;<br>
+          &ensp;direct_link: "<a href={image}>url</a>",<br>
+          &ensp;size: {imageSize}, /* kb */<br>
+          &ensp;fetch_time: {fetchTime}, /* ms */<br>
+          &rbrace;;
+        </p>
+      </div>
+    {/if}
   {:else}
     <ul class="image-rack">
       {#each images as image}
         <li id="image-rack-item">
-          <a href={image}>
+          <a href={`/language?language=${language}&image=${image}`}>
             <img
               src={image}
               alt="Image of an anime girl holding a programming book"
@@ -56,6 +132,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
         </li>
       {/each}
     </ul>
-    <p>Fetch time: {fetchTime}ms</p>
+
+    <p>Double fetch_time = {fetchTime}; /* ms */</p>
   {/if}
 </div>

@@ -34,15 +34,15 @@ img {
   border-radius: 5px;
 }
 
-#random-image img {
+.highlight-image img {
   height: 20em;
   transition: 0.25s;
 }
-#random-image img:hover {
+.highlight-image img:hover {
   height: 22.5em;
   opacity: 0.75;
 }
-#random-image a:hover {
+.highlight-image a:hover {
   border-bottom: none;
 }
 
