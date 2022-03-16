@@ -46,10 +46,11 @@ SPDX-License-Identifier: GPL-3.0-only -->
     complete = true;
 
     if (imageQuery) {
-      image = images.filter(i => i.includes(imageQuery));
+      image = images.filter((i) => i.includes(imageQuery));
 
       if (!image[0]) {
-        image = "https://www.pngarts.com/files/8/Confused-Anime-Transparent-Image.png";
+        image =
+          "https://www.pngarts.com/files/8/Confused-Anime-Transparent-Image.png";
         image = errorImages[Math.floor(Math.random() * errorImages.length)];
       } else {
         let xhr = new XMLHttpRequest();
@@ -63,7 +64,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
               imageSize = "Error";
             }
           }
-        }
+        };
         xhr.send(null);
       }
     }
@@ -86,20 +87,19 @@ SPDX-License-Identifier: GPL-3.0-only -->
       <div class="highlight-image">
         <p>
           <i>Could not locate that specific image!</i>
-          Wanna go <a href={`/language?language=${language}`}>back</a> to language homepage?
+          Wanna go <a href={`/language?language=${language}`}>back</a> to language
+          homepage?
         </p>
 
         <a href={image}>
-          <img
-            src={image}
-            alt="Image of a confused anime girl"
-          />
+          <img src={image} alt="Image of a confused anime girl" />
         </a>
       </div>
     {:else if image}
       <div class="highlight-image">
         <p>
-          Wanna go <a href={`/language?language=${language}`}>back</a> to language homepage?
+          Wanna go <a href={`/language?language=${language}`}>back</a> to language
+          homepage?
         </p>
 
         <a href={image}>
@@ -110,11 +110,10 @@ SPDX-License-Identifier: GPL-3.0-only -->
         </a>
 
         <p>
-          Attributes attributes =
-          &lbrace;<br>
-          &ensp;direct_link: "<a href={image}>url</a>",<br>
-          &ensp;size: {imageSize}, /* kb */<br>
-          &ensp;fetch_time: {fetchTime}, /* ms */<br>
+          Attributes attributes = &lbrace;<br />
+          &ensp;direct_link: "<a href={image}>url</a>",<br />
+          &ensp;size: {imageSize}, /* kb */<br />
+          &ensp;fetch_time: {fetchTime}, /* ms */<br />
           &rbrace;;
         </p>
       </div>
