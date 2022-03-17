@@ -52,12 +52,28 @@ SPDX-License-Identifier: GPL-3.0-only -->
     <p>Double fetch_time = {fetchTime}; /* ms */</p>
   {/if}
 
-  <h2>Contributing</h2>
-  <p>
-    If you'd like to support the project in any way, check out the repositories:
-  </p>
+  <h2>Related Projects</h2>
+  <p>Check out these other [The] Senpy Club-related projects!</p>
   <ul>
-    <li><a href="https://github.com/senpy-club/api-worker">API</a></li>
-    <li><a href="https://github.com/senpy-club/frontend-next">Frontend</a></li>
+    <li>
+      <a href="https://github.com/senpy-club/api-worker">API</a> &mdash; The Senpy
+      Club API
+    </li>
+    <li>
+      <a href="https://github.com/senpy-club/frontend-next">Frontend</a> &mdash;
+      You are here!
+    </li>
+    <li>
+      <a href="https://github.com/senpy-club/cli">CLI</a> &mdash; Access The Senpy
+      Club API from your terminal! (and export it to files too!)
+    </li>
+    <li>
+      <a href="https://docs.rs/senpy"><code>senpy-rs</code></a> &mdash; Access
+      The Senpy Club API from <a href="https://www.rust-lang.org/">Rust</a>!
+    </li>
+    <li>
+      <a href="https://docs.rs/senpy-ffi"><codE>senpy-ffi</codE></a> &mdash; Access
+      The Senpy Club API from any programming language!
+    </li>
   </ul>
 </section>
