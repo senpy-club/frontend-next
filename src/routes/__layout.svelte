@@ -31,4 +31,21 @@ SPDX-License-Identifier: GPL-3.0-only -->
     String copyright = "2022-{new Date().getFullYear()}
     <a href="https://github.com/Fuwn">Fuwn</a>";
   </p>
+
+  <script src="https://giscus.app/client.js"
+          data-repo="senpy-club/comments"
+          data-repo-id="R_kgDOHBgyMw"
+          data-category="General"
+          data-category-id="DIC_kwDOHBgyM84COKRc"
+          data-mapping="title"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="dark"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+  <template id="giscus"></template>
 </footer>
