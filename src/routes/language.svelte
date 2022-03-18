@@ -46,27 +46,38 @@ SPDX-License-Identifier: GPL-3.0-only -->
     complete = true;
 
     if (imageQuery) {
-      image = images.filter((i) => i.includes(imageQuery));
+      // If the `imageQuery` is a string
+      if (Number.isNaN(Number(imageQuery))) {
+        image = images.filter((i) => i.includes(imageQuery));
 
-      if (!image[0]) {
-        image =
-          "https://www.pngarts.com/files/8/Confused-Anime-Transparent-Image.png";
-        image = errorImages[Math.floor(Math.random() * errorImages.length)];
+        // Make sure that if there are no exact matches to the `imageQuery`;
+        // show error page
+        if (image[0] !== imageQuery) {
+          image[0] = undefined;
+        }
+
+        if (!image[0]) {
+          image =
+            "https://www.pngarts.com/files/8/Confused-Anime-Transparent-Image.png";
+          image = errorImages[Math.floor(Math.random() * errorImages.length)];
+        }
       } else {
-        let xhr = new XMLHttpRequest();
-
-        xhr.open("HEAD", image, true);
-        xhr.onreadystatechange = () => {
-          if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-              imageSize = `${xhr.getResponseHeader("Content-Length") / 1024}`;
-            } else {
-              imageSize = "Error";
-            }
-          }
-        };
-        xhr.send(null);
+        image = images[imageQuery];
       }
+
+      let xhr = new XMLHttpRequest();
+
+      xhr.open("HEAD", image, true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            imageSize = `${xhr.getResponseHeader("Content-Length") / 1024}`;
+          } else {
+            imageSize = "Error";
+          }
+        }
+      };
+      xhr.send(null);
     }
   });
 </script>
@@ -151,7 +162,11 @@ SPDX-License-Identifier: GPL-3.0-only -->
     <ul class="image-rack">
       {#each images as image}
         <li id="image-rack-item">
-          <a href={`/language?language=${language}&image=${image}`}>
+          <a
+            href={`/language?language=${language}&image=${images.indexOf(
+              image
+            )}`}
+          >
             <img
               src={image}
               alt="Image of an anime girl holding a programming book"
