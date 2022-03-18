@@ -38,6 +38,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
   let images, fetchTime, image, imageSize;
   let complete = false;
   let imageQuery = $page.url.searchParams.get("image");
+  let languageEncoded = language.replaceAll("#", "%23");
 
   onMount(async () => {
     fetchTime = performance.now();
@@ -99,7 +100,9 @@ SPDX-License-Identifier: GPL-3.0-only -->
         <p>
           <i>Could not locate that specific image!</i>
           Wanna go
-          <a href={`/language?language=${language}`} target="_blank">back</a>
+          <a href={`/language?language=${languageEncoded}`} target="_blank"
+            >back</a
+          >
           to language homepage?
         </p>
 
@@ -111,7 +114,9 @@ SPDX-License-Identifier: GPL-3.0-only -->
       <div class="highlight-image">
         <p>
           Wanna go
-          <a href={`/language?language=${language}`} target="_blank">back</a>
+          <a href={`/language?language=${languageEncoded}`} target="_blank"
+            >back</a
+          >
           to language homepage?
         </p>
 
@@ -163,7 +168,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
       {#each images as image}
         <li id="image-rack-item">
           <a
-            href={`/language?language=${language}&image=${images.indexOf(
+            href={`/language?language=${languageEncoded}&image=${images.indexOf(
               image
             )}`}
             target="_blank"
