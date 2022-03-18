@@ -48,5 +48,6 @@ SPDX-License-Identifier: GPL-3.0-only -->
     async>
   </script>
 
-  <template id="giscus" />
+  <!-- prettier-ignore -->
+  <template id="giscus"></template>
 </footer>
