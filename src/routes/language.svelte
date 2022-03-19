@@ -99,7 +99,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
         <p>
           <i>Could not locate that specific image!</i>
           Wanna go
-          <a href={`/language?language=${language}`}> back </a>
+          <a href={`/language?language=${language}`} target="_blank">back</a>
           to language homepage?
         </p>
 
@@ -111,7 +111,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
       <div class="highlight-image">
         <p>
           Wanna go
-          <a href={`/language?language=${language}`}> back </a>
+          <a href={`/language?language=${language}`} target="_blank">back</a>
           to language homepage?
         </p>
 
@@ -166,6 +166,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
             href={`/language?language=${language}&image=${images.indexOf(
               image
             )}`}
+            target="_blank"
           >
             <img
               src={image}
