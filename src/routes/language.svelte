@@ -145,8 +145,8 @@ SPDX-License-Identifier: GPL-3.0-only -->
           The aforementioned link does have an API which can provide direct data
           about images and could be integrated directly into this website,
           however, there is a ratelimit of around one-thousand, low-tier
-          requests per day without a paid subscription, which is why the link is
-          outbound.
+          requests per month without a paid subscription, which is why the link
+          is outbound.
         </p>
         <p>
           Integrating the API into this website is a future goal, however, it is
