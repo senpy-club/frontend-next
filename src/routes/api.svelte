@@ -45,6 +45,14 @@ SPDX-License-Identifier: GPL-3.0-only -->
     <a href="https://api.senpy.club" target="_blank">https://api.senpy.club</a>.
   </p>
 
+  <p>
+    The Senpy Club API can also be accessed through GraphQL:
+    <a href="https://github.com/senpy-club/graphql-api" target="_blank">
+      GitHub
+    </a>,
+    <a href="https://graphql.senpy.club/playground">Playground</a>
+  </p>
+
   {#if !complete}
     <p>Fetching API README...</p>
   {:else}

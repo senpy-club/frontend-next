@@ -56,24 +56,36 @@ SPDX-License-Identifier: GPL-3.0-only -->
   <p>Check out these other [The] Senpy Club-related projects!</p>
   <ul>
     <li>
-      <a href="https://github.com/senpy-club/api-worker">API</a> &mdash; The Senpy
-      Club API
+      <a href="https://github.com/senpy-club/api-worker" target="_blank">API</a>
+      &mdash; The Senpy Club API
     </li>
     <li>
-      <a href="https://github.com/senpy-club/frontend-next">Frontend</a> &mdash;
-      You are here!
+      <a href="https://github.com/senpy-club/frontend-next" target="_blank">
+        Frontend
+      </a> &mdash; You are here!
     </li>
     <li>
-      <a href="https://github.com/senpy-club/cli">CLI</a> &mdash; Access The Senpy
-      Club API from your terminal! (and export it to files too!)
+      <a href="https://github.com/senpy-club/cli" target="_blank">CLI</a> &mdash;
+      Access The Senpy Club API from your terminal! (and export it to files too!)
     </li>
     <li>
-      <a href="https://docs.rs/senpy"><code>senpy-rs</code></a> &mdash; Access
-      The Senpy Club API from <a href="https://www.rust-lang.org/">Rust</a>!
+      <a href="https://docs.rs/senpy" target="_blank"><code>senpy-rs</code></a>
+      &mdash; Access The Senpy Club API from
+      <a href="https://www.rust-lang.org/">Rust</a>!
     </li>
     <li>
-      <a href="https://docs.rs/senpy-ffi"><codE>senpy-ffi</codE></a> &mdash; Access
-      The Senpy Club API from any programming language!
+      <a href="https://docs.rs/senpy-ffi" target="_blank">
+        <code>senpy-ffi</code>
+      </a>
+      &mdash; Access The Senpy Club API from any programming language!
+    </li>
+    <li>
+      <a href="https://github.com/senpy-club/graphql-api" target="_blank">
+        GraphQL API
+      </a>
+      &mdash; GraphQL access to The Senpy Club API! (<a
+        href="https://graphql.senpy.club/playground">Playground</a
+      >)
     </li>
   </ul>
 </section>
