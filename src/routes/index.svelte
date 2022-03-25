@@ -88,4 +88,15 @@ SPDX-License-Identifier: GPL-3.0-only -->
       >)
     </li>
   </ul>
+
+  <h2>Other News</h2>
+  <p>
+    Someone made a TikTok about the repository! Check it out
+    <a
+      href="https://www.tiktok.com/@lewismenelaws/video/7068359909909236998"
+      target="_blank"
+    >
+      here!
+    </a>
+  </p>
 </section>
