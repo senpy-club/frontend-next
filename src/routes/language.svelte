@@ -132,7 +132,12 @@ SPDX-License-Identifier: GPL-3.0-only -->
           Want to know more information about this specific anime scene? Like
           what anime and episode it's from, frame, studio, where you can watch
           it, and a bunch of other information); Visit
-          <a href={`https://trace.moe/?url=${image}`} target="_blank"> this </a>
+          <a
+            href={`https://trace.moe/?url=${encodeURI(image)}`}
+            target="_blank"
+          >
+            this
+          </a>
           link!
         </p>
 
