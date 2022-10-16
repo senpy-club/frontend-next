@@ -38,7 +38,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
   let images, fetchTime, image, imageSize;
   let complete = false;
   let imageQuery = $page.url.searchParams.get("image");
-  let languageEncoded = language.replaceAll("#", "%23");
+  let languageEncoded = encodeURIComponent(language);
 
   onMount(async () => {
     fetchTime = performance.now();
