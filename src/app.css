@@ -26,6 +26,7 @@ html {
   overflow: scroll;
   overflow-x: hidden;
 }
+
 body {
   max-width: 58em;
 }
@@ -34,15 +35,7 @@ img {
   border-radius: 5px;
 }
 
-.highlight-image img {
-  height: 20em;
-  transition: 0.25s;
-}
-.highlight-image img:hover {
-  height: 22.5em;
-  opacity: 0.75;
-}
-.highlight-image a:hover {
+.highlighted-image a:hover {
   border-bottom: none;
 }
 
@@ -60,13 +53,16 @@ img {
   display: inline;
   padding: 10px;
 }
+
 #image-rack-item a:hover {
   border-bottom: none;
 }
+
 #image-rack-item img {
   width: 20%;
   transition: 0.25s;
 }
+
 #image-rack-item img:hover {
   opacity: 0.75;
   width: 25%;

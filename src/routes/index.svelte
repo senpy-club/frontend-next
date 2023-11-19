@@ -36,7 +36,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
   {#if !complete}
     <p>Fetching a random image ...</p>
   {:else}
-    <div class="highlight-image">
+    <div class="highlighted-image">
       <a href={`/language?language=${image.language}&image=${image.image}`}>
         <img src={image.image} alt="An anime girl holding a programming book" />
       </a>
@@ -80,3 +80,14 @@ SPDX-License-Identifier: GPL-3.0-only -->
     </li>
   </ul>
 </section>
+
+<style>
+  .highlighted-image img {
+    height: 35vh;
+    transition: 0.25s;
+  }
+  .highlighted-image img:hover {
+    height: 37.5vh;
+    opacity: 0.75;
+  }
+</style>
