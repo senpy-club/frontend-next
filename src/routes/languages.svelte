@@ -19,13 +19,11 @@ SPDX-License-Identifier: GPL-3.0-only -->
   import { onMount } from "svelte";
   import { fetchLanguages } from "$lib/api";
 
-  let languages, fetchTime;
+  let languages;
   let complete = false;
 
   onMount(async () => {
-    fetchTime = performance.now();
     languages = await fetchLanguages();
-    fetchTime = performance.now() - fetchTime;
     complete = true;
   });
 </script>
@@ -35,12 +33,10 @@ SPDX-License-Identifier: GPL-3.0-only -->
 </svelte:head>
 
 <div class="content">
-  <h1>Languages</h1>
-
   {#if !complete}
-    <p>Fetching languages...</p>
+    <p>Fetching languages ...</p>
   {:else}
-    <ul>
+    <ul id="language-list">
       {#each languages as language}
         <li>
           <a href={"/language?language=" + encodeURIComponent(language)}>
@@ -49,7 +45,23 @@ SPDX-License-Identifier: GPL-3.0-only -->
         </li>
       {/each}
     </ul>
-
-    <p>Double fetch_time = {fetchTime}; /* ms */</p>
   {/if}
 </div>
+
+<style>
+  #language-list {
+    column-count: 1;
+  }
+
+  @media screen and (min-width: 600px) {
+    #language-list {
+      column-count: 2;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    #language-list {
+      column-count: 3;
+    }
+  }
+</style>

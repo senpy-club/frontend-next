@@ -19,13 +19,11 @@ SPDX-License-Identifier: GPL-3.0-only -->
   import { onMount } from "svelte";
   import { fetchRandomImage } from "$lib/api";
 
-  let image, fetchTime;
+  let image;
   let complete = false;
 
   onMount(async () => {
-    fetchTime = performance.now();
     image = await fetchRandomImage();
-    fetchTime = performance.now() - fetchTime;
     complete = true;
   });
 </script>
@@ -35,25 +33,18 @@ SPDX-License-Identifier: GPL-3.0-only -->
 </svelte:head>
 
 <section>
-  <h1>Home</h1>
-
   {#if !complete}
-    <p>Fetching a random image...</p>
+    <p>Fetching a random image ...</p>
   {:else}
-    <div class="highlight-image">
-      <a href={`/language?language=${image.language}&image=${image.image}`}>
-        <img
-          src={image.image}
-          alt="Image of an anime girl holding a programming book"
-        />
+    <div class="highlighted-image">
+      <a href={`/language?language=${image.language}`}>
+        <img src={image.image} alt="An anime girl holding a programming book" />
       </a>
     </div>
-
-    <p>Double fetch_time = {fetchTime}; /* ms */</p>
   {/if}
 
   <h2>Related Projects</h2>
-  <p>Check out these other [The] Senpy Club-related projects!</p>
+
   <ul>
     <li>
       <a href="https://github.com/senpy-club/api-worker" target="_blank">API</a>
@@ -88,15 +79,15 @@ SPDX-License-Identifier: GPL-3.0-only -->
       >)
     </li>
   </ul>
-
-  <h2>Other News</h2>
-  <p>
-    Someone made a TikTok about the repository! Check it out
-    <a
-      href="https://www.tiktok.com/@lewismenelaws/video/7068359909909236998"
-      target="_blank"
-    >
-      here!
-    </a>
-  </p>
 </section>
+
+<style>
+  .highlighted-image img {
+    height: 35vh;
+    transition: 0.25s;
+  }
+  .highlighted-image img:hover {
+    height: 37.5vh;
+    opacity: 0.75;
+  }
+</style>

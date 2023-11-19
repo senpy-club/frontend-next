@@ -18,10 +18,12 @@ SPDX-License-Identifier: GPL-3.0-only -->
 
 <header>
   <nav>
-    Route senpy[3] = [
-    <a sveltekit:prefetch href="/">home</a>,
-    <a sveltekit:prefetch href="/languages">languages</a>,
-    <a sveltekit:prefetch href="/api">api</a>
-    ];
+    [
+    <a sveltekit:prefetch href="/">Home</a>,
+    <a sveltekit:prefetch href="/languages">Languages</a>,
+    <a sveltekit:prefetch href="/api">API</a>
+    ]
   </nav>
 </header>
+
+<p />
