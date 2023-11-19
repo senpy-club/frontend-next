@@ -34,11 +34,22 @@ SPDX-License-Identifier: GPL-3.0-only -->
     "https://i.imgur.com/TOgxESH.jpg",
   ];
 
-  let language = $page.url.searchParams.get("language");
   let images, image;
   let complete = false;
-  let imageQuery = $page.url.searchParams.get("image");
-  let languageEncoded = language.replaceAll("#", "%23");
+
+  $: language = $page.url.searchParams.get("language");
+  $: languageEncoded = $page.url.searchParams
+    .get("language")
+    .replaceAll("#", "%23");
+  $: imageQuery = $page.url.searchParams.get("image");
+
+  $: {
+    if (!imageQuery) {
+      image = null;
+    } else {
+      image = images[imageQuery];
+    }
+  }
 
   onMount(async () => {
     images = await fetchImages(language);
