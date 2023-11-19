@@ -39,15 +39,9 @@ SPDX-License-Identifier: GPL-3.0-only -->
     <ul id="language-list">
       {#each languages as language}
         <li>
-          {#if language === "C#"}
-            <a href={"/language?language=C%23"}>C#</a>
-          {:else if language === "C++"}
-            <a href={"/language?language=C%2b%2b"}>C++</a>
-          {:else}
-            <a href={"/language?language=" + language}>
-              {language}
-            </a>
-          {/if}
+          <a href={"/language?language=" + encodeURIComponent(language)}>
+            {language}
+          </a>
         </li>
       {/each}
     </ul>

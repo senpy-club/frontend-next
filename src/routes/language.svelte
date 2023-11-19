@@ -36,11 +36,11 @@ SPDX-License-Identifier: GPL-3.0-only -->
 
   let images;
   let complete = false;
-
+  
   $: language = $page.url.searchParams.get("language");
-  $: languageEncoded = $page.url.searchParams
-    .get("language")
-    .replaceAll("#", "%23");
+  $: languageEncoded = encodeURIComponent(
+    $page.url.searchParams.get("language")
+  );
   $: imageQuery = $page.url.searchParams.get("image");
   $: image = imageQuery
     ? imageQuery < images
