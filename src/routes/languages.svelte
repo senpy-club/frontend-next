@@ -36,7 +36,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
   {#if !complete}
     <p>Fetching languages ...</p>
   {:else}
-    <ul>
+    <ul id="language-list">
       {#each languages as language}
         <li>
           {#if language === "C#"}
@@ -53,3 +53,21 @@ SPDX-License-Identifier: GPL-3.0-only -->
     </ul>
   {/if}
 </div>
+
+<style>
+  #language-list {
+    column-count: 1;
+  }
+
+  @media screen and (min-width: 600px) {
+    #language-list {
+      column-count: 2;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    #language-list {
+      column-count: 3;
+    }
+  }
+</style>
