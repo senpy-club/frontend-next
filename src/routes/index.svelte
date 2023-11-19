@@ -35,8 +35,6 @@ SPDX-License-Identifier: GPL-3.0-only -->
 </svelte:head>
 
 <section>
-  <h1>Home</h1>
-
   {#if !complete}
     <p>Fetching a random image...</p>
   {:else}
