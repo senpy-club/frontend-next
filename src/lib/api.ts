@@ -19,7 +19,7 @@
 export const baseURL = "https://api.senpy.club";
 export const baseAPI = `${baseURL}/v2`;
 
-interface RandomImage {
+export interface RandomImage {
   language: string;
   image: string;
 }

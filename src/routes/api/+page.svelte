@@ -15,12 +15,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 Copyright (C) 2022-2022 Fuwn <contact@fuwn.me>
 SPDX-License-Identifier: GPL-3.0-only -->
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
   import rst2html from "rst2html";
   import { baseURL } from "$lib/api";
 
-  let rst;
+  let rst: string;
   let complete = false;
 
   onMount(async () => {
