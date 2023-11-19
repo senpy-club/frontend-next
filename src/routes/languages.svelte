@@ -35,8 +35,6 @@ SPDX-License-Identifier: GPL-3.0-only -->
 </svelte:head>
 
 <div class="content">
-  <h1>Languages</h1>
-
   {#if !complete}
     <p>Fetching languages...</p>
   {:else}
