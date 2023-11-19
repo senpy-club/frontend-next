@@ -42,14 +42,9 @@ SPDX-License-Identifier: GPL-3.0-only -->
   {:else}
     <div class="highlight-image">
       <a href={`/language?language=${image.language}&image=${image.image}`}>
-        <img
-          src={image.image}
-          alt="Image of an anime girl holding a programming book"
-        />
+        <img src={image.image} alt="An anime girl holding a programming book" />
       </a>
     </div>
-
-    <p>Double fetch_time = {fetchTime}; /* ms */</p>
   {/if}
 
   <h2>Related Projects</h2>
@@ -88,15 +83,4 @@ SPDX-License-Identifier: GPL-3.0-only -->
       >)
     </li>
   </ul>
-
-  <h2>Other News</h2>
-  <p>
-    Someone made a TikTok about the repository! Check it out
-    <a
-      href="https://www.tiktok.com/@lewismenelaws/video/7068359909909236998"
-      target="_blank"
-    >
-      here!
-    </a>
-  </p>
 </section>
