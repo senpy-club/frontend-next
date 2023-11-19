@@ -19,9 +19,9 @@ SPDX-License-Identifier: GPL-3.0-only -->
 <header>
   <nav>
     [
-    <a sveltekit:prefetch href="/">Home</a>,
-    <a sveltekit:prefetch href="/languages">Languages</a>,
-    <a sveltekit:prefetch href="/api">API</a>
+    <a href="/">Home</a>,
+    <a href="/languages">Languages</a>,
+    <a href="/api">API</a>
     ]
   </nav>
 </header>
