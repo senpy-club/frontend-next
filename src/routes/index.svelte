@@ -37,7 +37,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
     <p>Fetching a random image ...</p>
   {:else}
     <div class="highlighted-image">
-      <a href={`/language?language=${image.language}&image=${image.image}`}>
+      <a href={`/language?language=${image.language}`}>
         <img src={image.image} alt="An anime girl holding a programming book" />
       </a>
     </div>
