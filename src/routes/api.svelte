@@ -20,13 +20,11 @@ SPDX-License-Identifier: GPL-3.0-only -->
   import rst2html from "rst2html";
   import { baseURL } from "$lib/api";
 
-  let rst, rstTime;
+  let rst;
   let complete = false;
 
   onMount(async () => {
-    rstTime = performance.now();
     rst = await (await fetch(baseURL)).text();
-    rstTime = performance.now() - rstTime;
     complete = true;
   });
 </script>

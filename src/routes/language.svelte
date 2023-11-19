@@ -35,15 +35,13 @@ SPDX-License-Identifier: GPL-3.0-only -->
   ];
 
   let language = $page.url.searchParams.get("language");
-  let images, fetchTime, image, imageSize;
+  let images, image;
   let complete = false;
   let imageQuery = $page.url.searchParams.get("image");
   let languageEncoded = language.replaceAll("#", "%23");
 
   onMount(async () => {
-    fetchTime = performance.now();
     images = await fetchImages(language);
-    fetchTime = performance.now() - fetchTime;
     complete = true;
 
     if (imageQuery) {
@@ -65,20 +63,6 @@ SPDX-License-Identifier: GPL-3.0-only -->
       } else {
         image = images[imageQuery];
       }
-
-      let xhr = new XMLHttpRequest();
-
-      xhr.open("HEAD", image, true);
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            imageSize = `${xhr.getResponseHeader("Content-Length") / 1024}`;
-          } else {
-            imageSize = "Error";
-          }
-        }
-      };
-      xhr.send(null);
     }
   });
 </script>

@@ -19,13 +19,11 @@ SPDX-License-Identifier: GPL-3.0-only -->
   import { onMount } from "svelte";
   import { fetchLanguages } from "$lib/api";
 
-  let languages, fetchTime;
+  let languages;
   let complete = false;
 
   onMount(async () => {
-    fetchTime = performance.now();
     languages = await fetchLanguages();
-    fetchTime = performance.now() - fetchTime;
     complete = true;
   });
 </script>
