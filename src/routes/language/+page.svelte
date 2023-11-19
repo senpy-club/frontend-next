@@ -15,7 +15,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 Copyright (C) 2022-2022 Fuwn <contact@fuwn.me>
 SPDX-License-Identifier: GPL-3.0-only -->
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
   import { fetchImages } from "$lib/api";
   import { page } from "$app/stores";
@@ -34,12 +34,12 @@ SPDX-License-Identifier: GPL-3.0-only -->
     "https://i.imgur.com/TOgxESH.jpg",
   ];
 
-  let images;
+  let images: any;
   let complete = false;
-  
+
   $: language = $page.url.searchParams.get("language");
   $: languageEncoded = encodeURIComponent(
-    $page.url.searchParams.get("language")
+    $page.url.searchParams.get("language") || ""
   );
   $: imageQuery = $page.url.searchParams.get("image");
   $: image = imageQuery
@@ -49,19 +49,14 @@ SPDX-License-Identifier: GPL-3.0-only -->
     : null;
 
   onMount(async () => {
-    images = await fetchImages(language);
+    images = await fetchImages(language || "");
     complete = true;
 
     if (imageQuery) {
-      // If the `imageQuery` is a string
       if (Number.isNaN(Number(imageQuery))) {
-        image = images.filter((i) => i.includes(imageQuery));
+        image = images.filter((i: (string | null)[]) => i.includes(imageQuery));
 
-        // Make sure that if there are no exact matches to the `imageQuery`;
-        // show error page
-        if (image[0] !== imageQuery) {
-          image[0] = undefined;
-        }
+        if (image[0] !== imageQuery) image[0] = undefined;
 
         if (!image[0]) {
           image =

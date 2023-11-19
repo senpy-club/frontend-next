@@ -15,11 +15,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 Copyright (C) 2022-2022 Fuwn <contact@fuwn.me>
 SPDX-License-Identifier: GPL-3.0-only -->
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
-  import { fetchRandomImage } from "$lib/api";
+  import { fetchRandomImage, type RandomImage } from "$lib/api";
 
-  let image;
+  let image: RandomImage;
   let complete = false;
 
   onMount(async () => {
@@ -34,7 +34,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
 
 <section>
   {#if !complete}
-    <p>Fetching a random image ...</p>
+    <p>Fetching a random girl ...</p>
   {:else}
     <div class="highlighted-image">
       <a href={`/language?language=${image.language}`}>
