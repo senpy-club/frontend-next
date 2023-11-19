@@ -107,7 +107,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
         </p>
 
         <a href={image}>
-          <img src={image} alt="Image of a confused anime girl" />
+          <img src={image} alt="A confused anime girl" />
         </a>
       </div>
     {:else if image}
@@ -121,10 +121,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
         </p>
 
         <a href={image}>
-          <img
-            src={image}
-            alt="Image of an anime girl holding a programming book"
-          />
+          <img src={image} alt="An anime girl holding a programming book" />
         </a>
 
         <h2>Information</h2>
@@ -173,15 +170,10 @@ SPDX-License-Identifier: GPL-3.0-only -->
             )}`}
             target="_blank"
           >
-            <img
-              src={image}
-              alt="Image of an anime girl holding a programming book"
-            />
+            <img src={image} alt="An anime girl holding a programming book" />
           </a>
         </li>
       {/each}
     </ul>
-
-    <p>Double fetch_time = {fetchTime}; /* ms */</p>
   {/if}
 </div>
