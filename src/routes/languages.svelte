@@ -36,7 +36,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
 
 <div class="content">
   {#if !complete}
-    <p>Fetching languages...</p>
+    <p>Fetching languages ...</p>
   {:else}
     <ul>
       {#each languages as language}

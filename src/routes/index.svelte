@@ -36,7 +36,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
 
 <section>
   {#if !complete}
-    <p>Fetching a random image...</p>
+    <p>Fetching a random image ...</p>
   {:else}
     <div class="highlight-image">
       <a href={`/language?language=${image.language}&image=${image.image}`}>
@@ -46,7 +46,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
   {/if}
 
   <h2>Related Projects</h2>
-  <p>Check out these other [The] Senpy Club-related projects!</p>
+
   <ul>
     <li>
       <a href="https://github.com/senpy-club/api-worker" target="_blank">API</a>
