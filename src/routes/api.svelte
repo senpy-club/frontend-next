@@ -34,21 +34,21 @@ SPDX-License-Identifier: GPL-3.0-only -->
 </svelte:head>
 
 <section>
-  <p>The Senpy Club API can be accessed at</p>
-
-  <ul>
-    <li>
-      <a href="https://api.senpy.club" target="_blank">REST</a>
-    </li>
-    <li>
-      <a href="https://github.com/senpy-club/graphql-api" target="_blank">
-        GraphQL,
-      </a>
-      <a href="https://graphql.senpy.club/playground" target="_blank"
-        >Playground</a
-      >
-    </li>
-  </ul>
+  <p>
+    The Senpy Club API can be accessed through <a
+      href="https://api.senpy.club"
+      target="_blank"
+    >
+      REST
+    </a>
+    and
+    <a href="https://github.com/senpy-club/graphql-api" target="_blank"
+      >GraphQL</a
+    >
+    (<a href="https://graphql.senpy.club/playground" target="_blank">
+      Playground</a
+    >)
+  </p>
 
   {#if !complete}
     <p>Fetching API README ...</p>
