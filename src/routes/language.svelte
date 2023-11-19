@@ -103,7 +103,7 @@ SPDX-License-Identifier: GPL-3.0-only -->
         </a>
       </div>
     {:else if image}
-      <div class="highlight-image">
+      <div class="highlighted-image">
         <a href={image} target="_blank">
           <img src={image} alt="An anime girl holding a programming book" />
         </a>
@@ -125,3 +125,17 @@ SPDX-License-Identifier: GPL-3.0-only -->
     </ul>
   {/if}
 </div>
+
+<style>
+  .highlighted-image img {
+    height: 75vh;
+    transition: 0.25s;
+  }
+  .highlighted-image img:hover {
+    height: 72.5vh;
+    opacity: 0.75;
+  }
+  .highlighted-image a:hover {
+    border-bottom: none;
+  }
+</style>
