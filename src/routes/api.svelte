@@ -36,27 +36,25 @@ SPDX-License-Identifier: GPL-3.0-only -->
 </svelte:head>
 
 <section>
-  <h1>API</h1>
+  <p>The Senpy Club API can be accessed at</p>
 
-  <p>This documentation is auto-generated, there may be errors.</p>
-
-  <p>
-    The Senpy Club API can be accessed at
-    <a href="https://api.senpy.club" target="_blank">https://api.senpy.club</a>.
-  </p>
-
-  <p>
-    The Senpy Club API can also be accessed through GraphQL:
-    <a href="https://github.com/senpy-club/graphql-api" target="_blank">
-      GitHub
-    </a>,
-    <a href="https://graphql.senpy.club/playground">Playground</a>
-  </p>
+  <ul>
+    <li>
+      <a href="https://api.senpy.club" target="_blank">REST</a>
+    </li>
+    <li>
+      <a href="https://github.com/senpy-club/graphql-api" target="_blank">
+        GraphQL,
+      </a>
+      <a href="https://graphql.senpy.club/playground" target="_blank"
+        >Playground</a
+      >
+    </li>
+  </ul>
 
   {#if !complete}
-    <p>Fetching API README...</p>
+    <p>Fetching API README ...</p>
   {:else}
     {@html rst2html(rst)}
-    <p>Double rst_to_html_time = {rstTime}; /* ms */</p>
   {/if}
 </section>
