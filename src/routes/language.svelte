@@ -88,22 +88,19 @@ SPDX-License-Identifier: GPL-3.0-only -->
 </svelte:head>
 
 <div class="content">
-  <h1>{language}</h1>
+  <h1>
+    <a href={`/language?language=${languageEncoded}`}>{language}</a>
+  </h1>
 
   {#if !complete}
-    <p>Fetching images...</p>
+    <p>Fetching girls ...</p>
   {:else if images.length === 0}
-    <p>Sorry, no images were found for this language.</p>
+    <p>No images were found for this language.</p>
   {:else if image}
     {#if errorImages.includes(image)}
       <div class="highlight-image">
         <p>
-          <i>Could not locate that specific image!</i>
-          Wanna go
-          <a href={`/language?language=${languageEncoded}`} target="_blank"
-            >back</a
-          >
-          to language homepage?
+          <i>This image could not be found.</i>
         </p>
 
         <a href={image}>
@@ -112,52 +109,9 @@ SPDX-License-Identifier: GPL-3.0-only -->
       </div>
     {:else if image}
       <div class="highlight-image">
-        <p>
-          Wanna go
-          <a href={`/language?language=${languageEncoded}`} target="_blank"
-            >back</a
-          >
-          to language homepage?
-        </p>
-
-        <a href={image}>
+        <a href={image} target="_blank">
           <img src={image} alt="An anime girl holding a programming book" />
         </a>
-
-        <h2>Information</h2>
-        <p>
-          Want to know more information about this specific anime scene? Like
-          what anime and episode it's from, frame, studio, where you can watch
-          it, and a bunch of other information); Visit
-          <a href={`https://trace.moe/?url=${image}`} target="_blank"> this </a>
-          link!
-        </p>
-
-        <h2>Attributes</h2>
-        <p>
-          Attributes attributes = &lbrace;<br />
-          &ensp;direct_link: "<a href={image}>url</a>",<br />
-          &ensp;size: {imageSize}, /* kb */<br />
-          &ensp;fetch_time: {fetchTime}, /* ms */<br />
-          &rbrace;;
-        </p>
-
-        <h3>Development Information</h3>
-        <p>
-          The aforementioned link does have an API which can provide direct data
-          about images and could be integrated directly into this website,
-          however, there is a ratelimit of around one-thousand, low-tier
-          requests per month without a paid subscription, which is why the link
-          is outbound.
-        </p>
-        <p>
-          Integrating the API into this website is a future goal, however, it is
-          not financially viable at the moment for this project. If you'd like
-          to support the project to reach future goals, you can donate at
-          <a href="https://github.com/sponsors/senpy-club" target="_blank">
-            github.com/sponsors/senpy-club
-          </a>.
-        </p>
       </div>
     {/if}
   {:else}
@@ -168,7 +122,6 @@ SPDX-License-Identifier: GPL-3.0-only -->
             href={`/language?language=${languageEncoded}&image=${images.indexOf(
               image
             )}`}
-            target="_blank"
           >
             <img src={image} alt="An anime girl holding a programming book" />
           </a>
