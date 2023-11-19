@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  max-width: 58em;
+  max-width: 65.5%;
 }
 
 img {
@@ -51,7 +51,7 @@ img {
 
 #image-rack-item {
   display: inline;
-  padding: 10px;
+  padding: 0.75%;
 }
 
 #image-rack-item a:hover {
