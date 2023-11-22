@@ -120,11 +120,11 @@ SPDX-License-Identifier: GPL-3.0-only -->
 
 <style>
   .highlighted-image img {
-    height: 75vh;
+    width: 75vh;
     transition: 0.25s;
   }
   .highlighted-image img:hover {
-    height: 72.5vh;
+    width: 72.5vh;
     opacity: 0.75;
   }
   .highlighted-image a:hover {
